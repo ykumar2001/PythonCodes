@@ -1,4 +1,4 @@
-fruits = ["apple", "banana", "cherry"]
-fruits.index(1)
+def my_function(*kids):
+  print("The youngest child is " + kids[2])
 
-print(fruits)
+my_function("Emil", "Tobias", "Linus")
