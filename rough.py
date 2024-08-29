@@ -1,9 +1,9 @@
-# create a class employee and add salary and increment properties to it. 
-# write a method salary after increment method with a @property decorator with a settere,
-#  which change which changes the value of increment based on the salary.
+# # snake water gun game
+# print("choose any of them : SNAKE or WATER or GUN")
+# str(input())
+import random
 
-class employee :
-    def __init__(self,salary,increment):
-        self.salary=salary
-        self.increment=increment
-        
+def game(comp,me):
+    if comp == me:
+        return None
+    

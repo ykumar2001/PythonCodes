@@ -23,14 +23,14 @@ ques = [
 
 
 
-for quest in ques:
-    print(quest["question"])
-    for option in quest["options"]:
+for x in ques:
+    print(x["question"])
+    for option in x["options"]:
         print(option)
 
     user_ans = int(input("enter your option : "))
 
-    if user_ans == quest["ans"]:
+    if user_ans == x["ans"]:
         print("tere muh m",price, "land")
         price+=1
 

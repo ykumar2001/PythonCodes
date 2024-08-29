@@ -620,3 +620,216 @@
 # print(f"my dog's name is {doggy.name}.he is a {doggy.species}")
 # print(f"he says: {doggy.bark()}")    
 
+
+# create a class employee and add salary and increment properties to it. 
+# # write a method salary after increment method with a @property decorator with a settere,
+# #  which change which changes the value of increment based on the salary.
+
+# class employee :
+#     def __init__(self,name,salary,increment):
+#         self.name=name
+#         self.salary=salary
+#         self.increment=increment
+#     @property    
+#     def salary_after_increment(self):
+#         return self.salary +(self.salary *self.increment/100) 
+#     @property
+#     def increment_in_salary(self):
+#         return self.increment
+#     @increment_in_salary.setter
+#     def salary_increment(self,new_increment):
+#         if new_increment>=0:
+#             self.increment=new_increment
+#         else:
+#             raise ValueError("Increment must be a non-negative value.")
+# emp = employee("yogesh",50000,5) 
+
+# print(f"initial salary:INR {emp.salary}")
+# print(f"intial increment:{emp.increment}%")
+# print(f"salary after increment: INR {emp.salary_after_increment:.2f}"),print()
+
+# emp.increment=7
+# print(f"new increment :{emp.increment}%")
+# print(f"new salary after increment : INR{emp.salary_after_increment:.2f}")
+
+
+# write a class complex to represent complex numbers,along with overloaded operators + and * which adds and multiplies them.
+# class complex:
+#     def __init__(self,real,image):
+#         self.real=real
+#         self.image=image
+
+#     def __str__(self):
+#         return f"{self.real} + {self.image}i"
+
+#     def __add__(self,other):
+#         return complex(self.real+other.real ,self.image+other.image)
+#     def __mul__(self,other):
+#         return complex(self.real*other.real - self.image*other.image ,
+#                        self.real*other.real + self.image*other.image)   
+# c1=complex(3,2)
+# c2=complex(1,7) 
+
+# sum_result =c1+ c2
+# print(f"sum: {sum_result}")
+
+# product_result =c1*c2
+# print(f"product: {product_result}")
+
+# write a class vector representing a vector of n dimension.overload the + and * operator which calculates the sum and the dot product of them.
+# class VECTORS:
+#     def __init__(self,*component):
+#         self.component=component
+
+#     def __add__ (self,other):
+#         if len(self.component)!=len(other.component):
+#             raise ValueError("enter the value of same dimension.")
+#         sum=tuple(x+y for x,y in zip (self.component,other.component))
+#         return VECTORS(sum)
+    
+#     def __mul__(self,other):
+#         if len(self.component)!=len(other.component):
+#             raise ValueError("enter the value of same dimension.")
+#         dot_product=sum(x*y for x,y in zip (self.component,other.component))
+#         return (dot_product)
+
+# v1=VECTORS(1,2,3)
+# v2=VECTORS(4,5,6)
+
+# result_sum= v1+v2
+# result_dot_product=v1*v2
+# print(f"sum of component:{result_sum.component}")
+# print(f"dot product:{result_dot_product} ")
+
+# write __str__() method to print the vector as follows: 7i+8j+10k assume vector of dimension 3 for this problem,
+# class vector:
+#     def __init__(self,x,y,z):
+#         self.x=x
+#         self.y=y
+#         self.z=z
+#     def __add__(self,other):
+#         return vector(self.x+other.x,self.y+other.y,self.z+other.z)
+    
+#     def  __mul__(self,other):
+#         return vector(self.x*other.x,self.y*other.y,self.z*other.z)
+#     def __str__(self):
+#         return f"{self.x}i + {self.y}j + {self.z}K"
+# v1=vector(1,2,3)
+# v2=vector(4,5,6)
+
+# print(f"vector 1 : {v1} ")
+# print(f"vector 2 : {v2}"),print()
+
+# sum=v1+v2
+# print(f"sum of two vector is {sum}")
+
+# product=v1*v2
+# print(f"product of two vector is {product}")
+
+# write a class vector representing a vector of n dimension.overload the + and * operator which calculates the sum and the dot product of them. 
+# # overide the len() method on vector to display the dimension of the vactor.
+# class vector:
+#     def __init__(self,*components):
+#         self.components=components
+#     def __len__(self):
+#         return len(self.components)
+#     def __add__(self,other):
+#         if len(self.components) !=len(other.components):
+#             raise ValueError("enter te same dimension vector")
+#         sum=tuple(x+y for x,y in zip(self.components,other.components))
+#         return vector(sum)
+#     def __mul__(self,other):
+#         if len(self.components) !=len(other.components):
+#             raise ValueError("enter te same dimension vector")
+#         dot_product=sum(x*y for x,y in zip(self.components,other.components))
+#         return (dot_product)
+# v1=vector(1,2,3)
+# v2=vector(4,5,6)
+
+# result_sum= v1+v2
+# product=v1*v2
+# print(f"sum of two vector: {result_sum.components}")
+# print(f"dot product of two vector: {product}")
+
+
+# write a program to print third,fifth and seventh elemnet from a list using enumerate funtion.
+
+# a=["apple","banana","cherry","kiwi","coconut","watermelon","muskmelon","pear"]
+# skip_elem={3,5,7}
+# for index, a in enumerate(a):
+#     if index in skip_elem:
+#         continue
+#     print(a)
+
+# write a list comprehension to print a list which contains the multiplication tbale of a user entered number.
+# n=int(input("enter your number: "))
+# t=[n*i for i in range(10+1)]
+# print(f"table: {t}")
+
+# write a program to display a/b where a and b are integers. if b=0,display infinite by handling the Zero Division Error.
+# a=int(input("enter your first number: "))
+# b=int(input("enter your second number: "))     
+# try:
+#      result=a/b
+#      print(result)
+# except ZeroDivisionError:
+#      print("Error: Division of zero is not allowed.")     
+
+# write a program to input name ,marks and phone number of a student and format it the format function like below:
+# "the name of the student is harry,his marks are 72 and phone number is 99999888"
+
+# n=input("enter your NAME: ")
+# m=input("enter your MARKS: ")
+# p=input("enter your PHONE NUMBER: ")
+
+# print(f"The name of the student is {n},his marks are {m} and phone number is {p}")
+
+# def info():
+#     print(f"'The name of the student is {n},his marks are {m} and phone number is {p}'")
+#     return info
+# n=input("enter your NAME: ")
+# m=input("enter your MARKS: ")
+# p=input("enter your PHONE NUMBER: "),print("")
+
+# info()
+
+# A list contains the multiplication table of 7. write a program to convert it to a vertical string of some numbers.
+# num=7
+# table =list(map(lambda i: f"{num*i}",range(1,10+1)))
+# for x in table:
+#     print(x)
+
+# num =7
+# def mul_table(m):
+#     return m*num
+# table=list(map(mul_table,range(1,10+1)))
+# for x in table:
+#  print(x)
+
+# write a program to filter a list of numbers which are divisible by 5.
+
+# a= list(filter(lambda x:x%5,range(1,50+1)))
+# print(a)
+
+# def num(n):
+#     return n%5
+# result=list(filter(num,range(1,20+1)))
+# print(result)
+
+
+# write a program to find the maximum of the number in a list using the reduce function.
+
+# from functools import reduce
+# data1=[8,76,5,33,22]
+# result1=reduce(lambda x,y: x if x>y else y, data1)
+# print(f"your maximum number is {result1}")
+
+# from functools import reduce
+# data2=[45,34,3,98,76,46]
+# def max_num(x,y):
+#     if x>y:
+#         return x
+#     else:
+#         return y
+# result2=reduce(max_num,data2)    
+# print(f"your maximum number is {result2}")
